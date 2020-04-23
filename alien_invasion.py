@@ -43,6 +43,7 @@ class AlienInvasion:
         # Make the Play button
         self.play_button = Button(self, "Play")
 
+
     def run_game(self):
         """Start the main loop for the game"""
         while True:
@@ -135,6 +136,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         if not self.aliens:
             # Destroy existing bullets and create a new fleet
